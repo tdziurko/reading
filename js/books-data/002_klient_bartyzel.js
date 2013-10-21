@@ -4,7 +4,7 @@ function drawVisualization() {
     ['Date', 'Estimated progress', 'Current'],
     ['19/10',    230,   230],
     ['20/10',    220,   122],
-    ['21/10',    210,   null],
+    ['21/10',    210,    88],
     ['22/10',    200,   null],
     ['23/10',    190,   null],
     ['24/10',    180,   null],
