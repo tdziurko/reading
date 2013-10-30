@@ -2,7 +2,7 @@ function drawVisualization() {
   // Create and populate the data table.
   var data = google.visualization.arrayToDataTable([
     ['Date', 'Estimated progress', 'Current'],
-    ['30/10',    335,    335],
+    ['30/10',    335,    318],
     ['31/10',    325,   null],
     ['01/11',    315,   null],
     ['02/11',    305,   null],
