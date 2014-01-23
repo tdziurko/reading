@@ -30,7 +30,7 @@ function drawVisualization() {
     ['19/01',    199,   449 - 358],
     ['20/01',    189,   449 - 394],
     ['21/01',    179,   449 - 394],
-    ['22/01',    169,   null],
+    ['22/01',    169,   449 - 449],
     ['23/01',    159,   null],
     ['24/01',    149,   null],
     ['25/01',    139,   null],
@@ -47,7 +47,7 @@ function drawVisualization() {
     ['05/02',     29,   null],
     ['06/02',     19,   null],
     ['07/02',      9,   null],
-    ['07/02',      0,   null]
+    ['08/02',      0,   null]
   ]);
 
   // Create and draw the visualization.
