@@ -17,7 +17,7 @@ public class Main {
 //        Main main = new Main(args[0], Integer.parseInt(args[1]));
 
 
-        Main main = new Main("5/01/2014", 538, 10);
+        Main main = new Main("23/01/2014", 379, 10);
 
         main.run();
     }
@@ -32,17 +32,16 @@ public class Main {
 
         DateTime currentDate = new DateTime(startDate);
         int currentPage = pages;
-        String currentValue = pages + "";
+
         do {
             String dateString = currentDate.toString("dd/MM");
 
-            System.out.println(String.format("['%5s',   %4s,   %4s], ", dateString, currentPage, currentValue));
+            System.out.println(String.format("['%5s',   %4s,   null], ", dateString, currentPage));
             currentPage = currentPage - pagesPerDay;
             currentDate = currentDate.plusDays(1);
-            currentValue = "null";
 
             if (currentPage <= 0) {
-                System.out.println(String.format("['%5s',      0,   %4s] ", dateString, "null"));
+                System.out.println(String.format("['%5s',      0,   null] ", currentDate.toString("dd/MM")));
             }
         } while(currentPage > 0);
     }
