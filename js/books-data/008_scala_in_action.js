@@ -3,9 +3,9 @@ function drawVisualization() {
   var data = google.visualization.arrayToDataTable([
     ['Date', 'Estimated progress', 'Current'],
     ['22/01',    379,   379],
-    ['23/01',    369,  null],
-    ['24/01',    359,  null],
-    ['25/01',    349,  null],
+    ['23/01',    369,  379 - 16],
+    ['24/01',    359,  379 - 16],
+    ['25/01',    349,  379 - 19],
     ['26/01',    339,  null],
     ['27/01',    329,  null],
     ['28/01',    319,  null],
