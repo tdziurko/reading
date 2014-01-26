@@ -32,16 +32,16 @@ public class Main {
 
         DateTime currentDate = new DateTime(startDate);
         int currentPage = pages;
-
+        String currentValue = pages + "";
         do {
             String dateString = currentDate.toString("dd/MM");
 
-            System.out.println(String.format("['%5s',   %4s,   null], ", dateString, currentPage));
+            System.out.println(String.format("['%5s',   %4s,  %4s], ", dateString, currentPage, currentValue));
             currentPage = currentPage - pagesPerDay;
             currentDate = currentDate.plusDays(1);
-
+            currentValue = "null";
             if (currentPage <= 0) {
-                System.out.println(String.format("['%5s',      0,   null] ", currentDate.toString("dd/MM")));
+                System.out.println(String.format("['%5s',   %4s,  %4s]", currentDate.toString("dd/MM"), 0, currentValue));
             }
         } while(currentPage > 0);
     }
