@@ -59,7 +59,7 @@ function drawVisualization() {
   ]);
 
   // Create and draw the visualization.
-  new google.visualization.LineChart(document.getElementById('cqrs_journey')).
+  new google.visualization.LineChart(document.getElementById('american_desperado')).
       draw(data, {curveType: "function",
         width: 800, height: 425, pointSize: 3, legend: {position: "top"},
         vAxis: {maxValue: 180}}
