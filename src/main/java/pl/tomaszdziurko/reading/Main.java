@@ -17,7 +17,7 @@ public class Main {
 //        Main main = new Main(args[0], Integer.parseInt(args[1]));
 
 
-        Main main = new Main("8/11/2015", 383, 10);
+        Main main = new Main("3/01/2016", 473, 10);
 
         main.run();
     }
