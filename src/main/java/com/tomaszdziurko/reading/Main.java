@@ -1,47 +1,42 @@
-package pl.tomaszdziurko.reading;
+package com.tomaszdziurko.reading;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
 
-    private DateTime startDate;
+    public static final DateTimeFormatter DAY_MONTH_FORMATTER = DateTimeFormatter.ofPattern("dd/MM");
+    private LocalDate startDate;
     private int pages;
     private int pagesPerDay;
 
     public static void main(String[] args) {
 
-//        if (args.length != 2) {
-//            throw new RuntimeException("Invalid number of args, it should be <startdate dd/MM/yyyy> numberOfPages");
-//        }
-//        Main main = new Main(args[0], Integer.parseInt(args[1]));
-
-
-        Main main = new Main("3/01/2016", 473, 10);
+        Main main = new Main("01/01/2018", 336, 10);
 
         main.run();
     }
 
     public Main(String dateString, int pages, int pagesPerDay) {
         this.pagesPerDay = pagesPerDay;
-        startDate = DateTimeFormat.forPattern("dd/MM/yyyy").parseDateTime(dateString).minusDays(1);
+        startDate = DateTimeFormatter.ofPattern("dd/MM/yyyy").parse(dateString, LocalDate::from);
         this.pages = pages;
     }
 
     public void run() {
 
-        DateTime currentDate = new DateTime(startDate);
+        LocalDate currentDate = LocalDate.from(startDate);
         int currentPage = pages;
         String currentValue = pages + "";
         do {
-            String dateString = currentDate.toString("dd/MM");
+            String dateString = currentDate.format(DAY_MONTH_FORMATTER);
 
             System.out.println(String.format("['%5s',   %4s,  %4s], ", dateString, currentPage, currentValue));
             currentPage = currentPage - pagesPerDay;
             currentDate = currentDate.plusDays(1);
             currentValue = "null";
             if (currentPage <= 0) {
-                System.out.println(String.format("['%5s',   %4s,  %4s]", currentDate.toString("dd/MM"), 0, currentValue));
+                System.out.println(String.format("['%5s',   %4s,  %4s]", currentDate.format(DAY_MONTH_FORMATTER), 0, currentValue));
             }
         } while(currentPage > 0);
     }
